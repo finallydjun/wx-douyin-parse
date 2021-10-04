@@ -1,0 +1,4 @@
+<view class="itemBox" wx:for="{{itemList}}" wx:key="index">
+    <view class="title">{{item.title}}</view>
+    <view class="content">{{item.content}}</view>
+</view>

@@ -1,0 +1,36 @@
+<view>
+    <!-- 轮播图部分 -->
+    <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{background}}" wx:key="index">
+                <swiper-item>
+                    <image model:src="{{item}}"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 一言部分 -->
+    <scroll-view class="scrollBox" scroll-x="true">
+        <text user-select="true" style="white-space: nowrap;">{{oneText}}</text>
+    </scroll-view>
+    <!-- 输入框部分 -->
+    <view class="functionBox">
+        <input type="text" model:value="{{inputUrl}}" placeholder="请输入要解析的地址" />
+        <text class="btn" bindtap="parsing">解析</text>
+        <text class="btn" bindtap="clearInput">清空</text>
+    </view>
+    <!-- 视频部分 -->
+    <video model:src="{{videoUrl}}"></video>
+    <!-- 按钮部分 -->
+    <view class="btnBox">
+        <view class="btn" bindtap="downLoadVideo">下载</view>
+        <view class="btn" bindtap="copyVideoUrl">复制链接</view>
+    </view>
+    <!-- tips部分 -->
+    <view class="tipsBox">
+        <view wx:for="{{tipsList}}" wx:key="index">
+            <text class="title">{{item.name}}</text>
+            <text class="content">{{item.content}}</text>
+        </view>
+    </view>
+</view>

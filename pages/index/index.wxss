@@ -1,0 +1,82 @@
+.swiper {
+    margin: 10rpx 10rpx;
+    width: 730rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+.swiper image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+.scrollBox {
+    padding: 20rpx;
+    margin: 10rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+    width: 690rpx;
+}
+
+.functionBox {
+    margin: 10rpx;
+    padding: 10rpx 20rpx;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.functionBox input {
+    width: 700rpx;
+}
+
+.functionBox .btn {
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10rpx;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    background: #81C995;
+    color: #fff;
+    width: 50rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+video {
+    margin: 5rpx 10rpx;
+    width: 730rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+.btnBox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnBox .btn {
+    width: 250rpx;
+    text-align: center;
+    padding: 10rpx 30rpx;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+    margin: 10rpx;
+    background: #81C995;
+    color: #fff;
+}
+
+.tipsBox {
+    margin: 10rpx 10rpx;
+    width: 730rpx;
+    font-size: 24rpx;
+    color: #bbb;
+}
+
+.tipsBox .title {
+    color: #aaa;
+    font-weight: bold;
+    margin-right: 10rpx;
+}

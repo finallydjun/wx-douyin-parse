@@ -1,0 +1,37 @@
+<view class="itemBox">
+    <text class="title">联系我们</text>
+    <view class="content">
+        <view class="name">Name:</view>
+        <view class="desc">Finally</view>
+    </view>
+    <view class="content">
+        <view class="name">QQ:</view>
+        <view class="desc">3170495286</view>
+    </view>
+    <view class="content">
+        <view class="name">QQ群:</view>
+        <view class="desc">858380577</view>
+    </view>
+    <view class="content">
+        <view class="name">Email:</view>
+        <view class="desc">3170495286@qq.com</view>
+    </view>
+    <view class="content">
+        <view class="name">公众号:</view>
+        <view class="desc">FinallyBlog</view>
+    </view>
+    <view class="content">
+        <view class="name">个人博客:</view>
+        <view class="desc">https://ldjun.cn</view>
+    </view>
+</view>
+<view class="itemBox">
+    <text class="title">关于本小程序</text>
+    <view class="item">该小程序正处于开发阶段！</view>
+    <view class="item">目前没有接入任何广告！</view>
+</view>
+<view class="itemBox">
+    <text class="title">我他喵要吐槽</text>
+    <view class="item">如果你有更好的想法，可以联系到我哦~</view>
+</view>
+<view class="footBox">小程序由Ten▪Api免费提供Api服务！</view>

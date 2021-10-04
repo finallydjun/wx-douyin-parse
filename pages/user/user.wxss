@@ -1,0 +1,87 @@
+.userBox{
+    display: flex;
+    flex-direction: column;
+}
+.topBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 750rpx;
+    box-sizing: border-box;
+    height: 300rpx;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+.background {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+.userImg {
+    margin-top: 50rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.userName{
+    margin-bottom: 50rpx;
+}
+
+.listBox{
+    margin: 20rpx;
+    border-radius: 10px;
+    /* height: 500rpx; */
+    /* background: red; */
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+.itemBox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100rpx;
+    padding: 0 15rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.itemBox:active{
+    /* background: #81C995; */
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+.itemLeft image{
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 15rpx;
+    transform: translateY(5rpx);
+}
+.itemRight image{
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 15rpx;
+    transform: translateY(5rpx);
+}
+.itemBox:last-child{
+    border: none;
+}
+.footBox{
+    white-space: nowrap;
+    font-size: 20rpx;
+    color: #aaa;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}   
+.sharebtn{
+    padding: 0;
+    height: 100%;
+    width: 100% !important;
+    transform: translate(20rpx, -20rpx);
+	opacity:0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}

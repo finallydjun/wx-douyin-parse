@@ -1,0 +1,21 @@
+page{
+    background: #eee;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.itemBox{
+    background: #fff;
+    width: 710rpx;
+    padding: 0 20rpx;
+    margin-bottom: 50rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+.title{
+    font-weight: bold;
+    padding: 40rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.content{
+    padding: 20rpx 40rpx;
+}

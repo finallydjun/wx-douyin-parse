@@ -1,0 +1,63 @@
+page {
+    margin-top: 20rpx;
+}
+
+.itemBox {
+    display: flex;
+}
+
+.yuan {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background: #81C995;
+}
+
+.left {
+    width: 100rpx;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hxian {
+    display: inline-block;
+    width: 5rpx;
+    height: 100%;
+    background: #ccc;
+}
+
+
+.right {
+    margin-top: 10rpx;
+    width: 600rpx;
+    margin-bottom: 20rpx;
+}
+
+.right .title {
+    display: inline-block;
+    margin-right: 280rpx;
+}
+
+.verBox{
+    display: flex;
+    font-size: 25rpx;
+    transform: translateY(-10rpx);
+}
+
+.right .content {
+    padding: 20rpx;
+    border-radius: 10rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+.right ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.right ul li {
+    line-height: 50rpx;
+    font-size: 25rpx;
+    font-weight: bold;
+}

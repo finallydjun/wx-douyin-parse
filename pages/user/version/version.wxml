@@ -1,0 +1,17 @@
+<view class="itemBox" wx:for="{{updataList}}" wx:key="index">
+    <view class="left">
+        <view class="yuan"></view>
+        <view wx:if="{{updataList.length-1!=index}}" class="hxian"></view>
+    </view>
+    <view class="right">
+        <view class="verBox">
+            <text class="title">{{item.dateTime}}</text>
+            <text class="version">{{'version：'+item.version}}</text>
+        </view>
+        <view class="content">
+            <ul wx:for="{{item.contentList}}" wx:key="index">
+                <li>{{item}}</li>
+            </ul>
+        </view>
+    </view>
+</view>
