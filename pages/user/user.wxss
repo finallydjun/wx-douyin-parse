@@ -21,12 +21,14 @@
     z-index: -1;
 }
 .userImg {
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
     margin-top: 50rpx;
     width: 150rpx;
     height: 150rpx;
     border-radius: 50%;
 }
 .userName{
+    font-weight: bold;
     margin-bottom: 50rpx;
 }
 

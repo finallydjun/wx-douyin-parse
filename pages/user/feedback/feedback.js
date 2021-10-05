@@ -1,18 +1,77 @@
 // pages/user/feedback/feedback.js
+const db = wx.cloud.database().collection('t_feedback')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        requestID: '',
+        // appid: '',
+        // openid: '',
+        unionid: '',
+        feedText: '',
+        contactText: ''
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        console.log(db)
+        let that = this
+        wx.cloud.callFunction({
+            // 云函数名称
+            name: 'getUserinfo',
+            // 传给云函数的参数
+            success: function (res) {
+                console.log(res)
+                that.setData({
+                    requestID: res.requestID,
+                    // appid: res.result.appid,
+                    // openid: res.result.openid,
+                    unionid: res.result.unionid
+                })
+            },
+            fail: console.error
+        })
 
+    },
+
+    getUserInfo() {
+        console.log(this.data)
+        let that = this;
+        if (this.data.feedText === '') {
+            wx.showToast({
+                icon: 'error',
+                title: '建议不能为空',
+            })
+            return
+        }
+        db.add({
+            data: {
+                requestID: this.data.requestID,
+                // appid: this.data.appid,
+                // openid: this.data.openid,
+                unionid: this.data.unionid,
+                feedText: this.data.feedText,
+                contactText: this.data.contactText,
+            },
+            success(res) {
+                console.log(res)
+                that.setData({
+                    feedText:'',
+                    contactText:''
+                })
+                wx.showToast({
+                    icon: 'success',
+                    title: '提交成功！',
+                })
+            },
+            fail(e) {
+                console.log(e)
+            }
+        })
     },
 
     /**

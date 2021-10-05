@@ -4,7 +4,7 @@
         <swiper indicator-dots="{{indicatorDots}}" autoplay interval="{{interval}}" duration="{{duration}}">
             <block wx:for="{{background}}" wx:key="index">
                 <swiper-item>
-                    <image model:src="{{item}}"></image>
+                    <image mode="aspectFill" model:src="{{item}}"></image>
                 </swiper-item>
             </block>
         </swiper>

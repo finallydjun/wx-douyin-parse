@@ -16,12 +16,12 @@ Page({
                 type: 'explain',
                 tag: 1
             },
-            // {
-            //     iconPath: '../../static/key.svg',
-            //     name: '建议反馈',
-            //     type: 'feedback',
-            //     tag: 1
-            // },
+            {
+                iconPath: '../../static/message-square.svg',
+                name: '建议反馈',
+                type: 'feedback',
+                tag: 1
+            },
             {
                 iconPath: '../../static/award.svg',
                 name: '关于我们',
@@ -38,6 +38,12 @@ Page({
                 iconPath: '../../static/send.svg',
                 name: '关于版本',
                 type: 'version',
+                tag: 1
+            },
+            {
+                iconPath: '../../static/users.svg',
+                name: '管理员登录',
+                type: 'admin',
                 tag: 1
             },
         ]

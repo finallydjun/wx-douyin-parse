@@ -7,6 +7,14 @@ Page({
     data: {
         updataList:[
             {
+                dateTime:'2021-10-05',
+                version:'1.0.3',
+                contentList:[
+                    '添加自动更新功能',
+                    '集成云开发添加建议反馈功能'
+                ]
+            },
+            {
                 dateTime:'2021-10-04',
                 version:'1.0.2',
                 contentList:[

@@ -1,2 +1,4 @@
-<!--pages/user/feedback/feedback.wxml-->
-<text>pages/user/feedback/feedback.wxml</text>
+<textarea placeholder="请输入您的建议，我们将及时采纳并处理！" textarea-placeholder auto-height focus="{{focus}}" model:value="{{feedText}}" />
+<input placeholder="[选填]联系方式/QQ/微信/手机号！" type="text" model:value="{{contactText}}" />
+<view class="submitBtn" bindtap="getUserInfo">提交反馈</view>
+<text class="desc">注：切勿乱填并提交，发现将屏蔽使用！！！</text>

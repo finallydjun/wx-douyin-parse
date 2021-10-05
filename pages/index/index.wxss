@@ -1,6 +1,6 @@
 .swiper {
     margin: 10rpx 10rpx;
-    width: 730rpx;
+    /* width: 730rpx; */
     box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
 }
 

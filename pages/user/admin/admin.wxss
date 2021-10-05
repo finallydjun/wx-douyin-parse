@@ -1,0 +1,69 @@
+.userBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.topBox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 750rpx;
+    box-sizing: border-box;
+    height: 300rpx;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-size: 100% 100%;
+    z-index: -1;
+}
+
+.userImg {
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    border: 1px solid #ccc;
+    margin-top: 50rpx;
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+
+.userName {
+    font-weight: bold;
+    margin-bottom: 50rpx;
+}
+
+.userNameBox {
+    padding: 0 30rpx;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    height: 100rpx;
+    width: 690rpx;
+}
+
+.userNameBox .title {
+    white-space: nowrap;
+    width: 140rpx;
+}
+
+.userNameBox .inputText {
+    /* background: red; */
+    flex: 1;
+}
+
+.submit {
+    width: 700rpx;
+    background: #81C995;
+    color: #Fff;
+    text-align: center;
+    border-radius: 15rpx;
+    padding: 25rpx 0;
+    font-weight: bold;
+    margin-left: 25rpx;
+    margin-top: 20rpx;
+}

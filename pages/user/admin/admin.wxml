@@ -1,0 +1,17 @@
+<view class="userBox">
+    <view class="topBox">
+        <image class="background" model:src="{{background}}"></image>
+        <image class="userImg" model:src="{{userImg}}"></image>
+        <text class="userName">{{userNameText}}</text>
+    </view>
+    <view class="userNameBox">
+        <text class="title">用户名：</text>
+        <input class="inputText" model:value="{{userName}}" type="text" placeholder="请输入用户名"/>
+    </view>
+    <view class="userNameBox">
+        <text class="title">密码：</text>
+        <input class="inputText" model:value="{{pwd}}" type="text" placeholder="请输入密码"/>
+    </view>
+    
+    <view bindtap="submitUser" class="submit">登陆</view>
+</view>
