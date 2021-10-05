@@ -8,6 +8,8 @@
         <view class="itemBox" bindtap="navigateTo" wx:for="{{itemList}}" wx:key="index" data-type="{{item.type}}"
             data-tag="{{item.tag}}">
             <button wx:if="{{item.tag===2}}" open-type="share" class="sharebtn"></button>
+            <button wx:if="{{item.tag===3}}" open-type="feedback" class="sharebtn"></button>
+            <button wx:if="{{item.tag===4}}" open-type="contact" class="sharebtn"></button>
             <view class="itemLeft">
                 <image model:src="{{item.iconPath}}"></image>
                 <text bindtap="navigateTo" data-type="{{item.type}}" data-tag="{{item.tag}}">{{item.name}}</text>

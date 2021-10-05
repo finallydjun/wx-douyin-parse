@@ -13,6 +13,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        isparsing:false,//是否解析成功
         background: ['https://tenapi.cn/acg', 'https://tenapi.cn/acg', 'https://tenapi.cn/acg'],
         indicatorDots: true,
         vertical: false,

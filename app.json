@@ -1,8 +1,6 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/user/admin/admin",
-    "pages/user/feedback/feedback",
     "pages/user/version/version",
     "pages/user/user",
     "pages/user/myPage/myPage",
@@ -11,7 +9,7 @@
   "window":{
     "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "#81C995",
-    "navigationBarTitleText": "短视频去水印",
+    "navigationBarTitleText": "主页",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {

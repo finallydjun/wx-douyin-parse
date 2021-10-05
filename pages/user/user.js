@@ -20,7 +20,21 @@ Page({
                 iconPath: '../../static/message-square.svg',
                 name: '建议反馈',
                 type: 'feedback',
+                tag: 3
+            },
+
+
+            {
+                iconPath: '../../static/send.svg',
+                name: '版本说明',
+                type: 'version',
                 tag: 1
+            },
+            {
+                iconPath: '../../static/users.svg',
+                name: '联系客服',
+                type: 'admin',
+                tag: 4
             },
             {
                 iconPath: '../../static/award.svg',
@@ -33,18 +47,6 @@ Page({
                 name: '分享给好友',
                 type: 'myPage',
                 tag: 2
-            },
-            {
-                iconPath: '../../static/send.svg',
-                name: '关于版本',
-                type: 'version',
-                tag: 1
-            },
-            {
-                iconPath: '../../static/users.svg',
-                name: '管理员登录',
-                type: 'admin',
-                tag: 1
             },
         ]
     },
