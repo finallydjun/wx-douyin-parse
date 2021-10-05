@@ -59,17 +59,26 @@ Page({
             },
             success(res) {
                 console.log(res)
-                that.setData({
-                    feedText:'',
-                    contactText:''
+                wx.showLoading({
+                    title: '正在提交表单',
                 })
-                wx.showToast({
-                    icon: 'success',
-                    title: '提交成功！',
+                setTimeout(function () {
+                    wx.hideLoading()
+                    wx.showToast({
+                        icon: 'success',
+                        title: '提交成功！',
+                    })
+                }, 2000)
+                that.setData({
+                    feedText: '',
+                    contactText: ''
                 })
             },
             fail(e) {
-                console.log(e)
+                wx.showToast({
+                    icon: 'error',
+                    title: '提交失败！',
+                })
             }
         })
     },
