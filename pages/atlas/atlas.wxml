@@ -1,0 +1,12 @@
+<!-- 输入框部分 -->
+<view class="functionBox">
+    <input type="text" model:value="{{inputUrl}}" placeholder="请输入要解析的地址" />
+    <text class="btn" bindtap="parsing">解析</text>
+    <text class="btn" bindtap="clearInput">清空</text>
+</view>
+<view>
+    <button bindtap="downLoadImgList">一键下载所有图集</button>
+</view>
+<view class="imgBox">
+    <image data-src="{{item}}" bindtap="previewImage"  wx:for="{{imgList}}" wx:key="index" model:src="{{item}}" alt="" />
+</view>

@@ -1,0 +1,40 @@
+.functionBox {
+    margin: 10rpx;
+    padding: 10rpx 20rpx;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    background: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.functionBox input {
+    width: 700rpx;
+}
+
+.functionBox .btn {
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 10rpx;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    background: #81C995;
+    color: #fff;
+    width: 50rpx;
+    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
+}
+
+.imgBox {
+    padding: 40rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+image {
+    width: 200rpx;
+    flex-wrap: wrap;
+    margin-bottom: 20rpx;
+}

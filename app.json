@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/atlas/atlas",
     "pages/user/version/version",
     "pages/user/user",
     "pages/user/myPage/myPage",
@@ -19,6 +20,12 @@
         "pagePath": "pages/index/index",
         "selectedIconPath": "/static/home-icon-active.png",
         "text": "主页"
+      },
+      {
+        "iconPath": "/static/skyatlas.png",
+        "pagePath": "pages/atlas/atlas",
+        "selectedIconPath": "/static/skyatlas-active.png",
+        "text": "图集"
       },
       {
         "iconPath": "/static/user-icon.png",

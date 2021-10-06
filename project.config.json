@@ -1,11 +1,12 @@
 {
     "description": "项目配置文件",
-    "cloudfunctionRoot": "clound",
     "packOptions": {
-        "ignore": [{
-            "type": "file",
-            "value": ".eslintrc.js"
-        }]
+        "ignore": [
+            {
+                "type": "file",
+                "value": ".eslintrc.js"
+            }
+        ]
     },
     "setting": {
         "urlCheck": true,
@@ -46,7 +47,7 @@
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.19.4",
+    "libVersion": "2.19.6",
     "appid": "wxc5a3b0ff61f15100",
     "projectname": "%E8%81%9A%E5%90%88%E7%9F%AD%E8%A7%86%E9%A2%91%E8%A7%A3%E6%9E%90",
     "debugOptions": {
@@ -58,6 +59,8 @@
         "servePath": ""
     },
     "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
     "condition": {
         "search": {
             "list": []

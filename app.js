@@ -1,9 +1,5 @@
 App({
     onLaunch: function () {
-
-        wx.cloud.init({
-            env:"demo-2gt964a3b5ca83d5"
-        })
         const updateManager = wx.getUpdateManager()
 
         updateManager.onCheckForUpdate(function (res) {

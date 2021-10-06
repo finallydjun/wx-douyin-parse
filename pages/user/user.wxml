@@ -12,7 +12,7 @@
             <button wx:if="{{item.tag===4}}" open-type="contact" class="sharebtn"></button>
             <view class="itemLeft">
                 <image model:src="{{item.iconPath}}"></image>
-                <text bindtap="navigateTo" data-type="{{item.type}}" data-tag="{{item.tag}}">{{item.name}}</text>
+                <text catchtap="navigateTo" data-type="{{item.type}}" data-tag="{{item.tag}}">{{item.name}}</text>
             </view>
             <view class="itemRight">
                 <image model:src="{{rightIcon}}"></image>
