@@ -7,6 +7,15 @@ Page({
     data: {
         updataList:[
             {
+                dateTime:'2021-10-07',
+                version:'1.0.4',
+                contentList:[
+                    '增加解析图集功能',
+                    '修改冒泡事件的bug',
+                    '展示使用人头像及用户名',
+                ]
+            },
+            {
                 dateTime:'2021-10-05',
                 version:'1.0.3',
                 contentList:[

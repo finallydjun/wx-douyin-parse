@@ -1,8 +1,10 @@
 <view class="userBox">
     <view class="topBox">
         <image class="background" model:src="{{background}}"></image>
-        <image class="userImg" model:src="{{userImg}}"></image>
-        <text class="userName">{{userName}}</text>
+        <!-- <image class="userImg" model:src="{{userImg}}"></image>
+        <text class="userName">{{userName}}</text> -->
+        <open-data class="userImg" default-avatar="{{userImg}}" type="userAvatarUrl"></open-data>
+        <open-data class="userName" default-text="Finally去水印" type="userNickName"></open-data>
     </view>
     <view class="listBox">
         <view class="itemBox" bindtap="navigateTo" wx:for="{{itemList}}" wx:key="index" data-type="{{item.type}}"

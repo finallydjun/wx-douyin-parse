@@ -4,8 +4,8 @@
     <text class="btn" bindtap="parsing">解析</text>
     <text class="btn" bindtap="clearInput">清空</text>
 </view>
-<view>
-    <button bindtap="downLoadImgList">一键下载所有图集</button>
+<view class="btnBox">
+    <button bindtap="downLoadImgList" wx:if="{{isparsing}}">一键下载所有图集</button>
 </view>
 <view class="imgBox">
     <image data-src="{{item}}" bindtap="previewImage"  wx:for="{{imgList}}" wx:key="index" model:src="{{item}}" alt="" />

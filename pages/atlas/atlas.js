@@ -1,13 +1,71 @@
 // pages/atlas/atlas.js
 Page({
+    onLoad() {
 
+    },
+    onShow() {
+        console.log(111)
+        this.getIsCopy()
+    },
+    onHide() {
+        console.log('hide')
+    },
     /**
      * 页面的初始数据
      */
     data: {
         inputUrl: '',
-        list_show:false,
+        isparsing: false,
+        list_show: false,
         imgList: [],
+    },
+    getIsCopy() {
+        let that = this;
+        wx.getClipboardData({
+            success: (option) => {
+                console.log(option)
+                // const isUrl = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+#/%]*[/]*/.exec(option.data)
+                const isUrl = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g.exec(option.data)
+                // http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))
+                console.log(isUrl)
+                if (isUrl) {
+                    wx.showModal({
+                        title: '检测到剪切板有复制链接！',
+                        content: '是否解析当前链接：' + isUrl[0],
+                        success(res) {
+                            if (res.confirm) {
+                                that.setData({
+                                    inputUrl: isUrl[0]
+                                })
+                                that.parsing()
+                                // wx.setClipboardData({
+                                //     data: ' ',
+                                //     success(res) {
+                                //         wx.hideLoading()
+                                //         console.log(res)
+                                //     },
+                                //     fail(e) {
+                                //         console.log(e)
+                                //     }
+                                // })
+                            } else if (res.cancel) {
+                                console.log('用户点击取消')
+                                wx.setClipboardData({
+                                    data: ' ',
+                                    success(res) {
+                                        wx.hideLoading()
+                                        console.log(res)
+                                    },
+                                    fail(e) {
+                                        console.log(e)
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            },
+        })
     },
 
     parsing() {
@@ -41,7 +99,8 @@ Page({
                             title: '解析成功！',
                         })
                         that.setData({
-                            imgList: res.data.images
+                            imgList: res.data.images,
+                            isparsing: true,
                         })
                     } else {
                         if (res.data.msg === '解析失败') {
@@ -214,19 +273,6 @@ Page({
 
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
 
     /**
      * 生命周期函数--监听页面卸载

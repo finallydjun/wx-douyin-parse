@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        userName: 'Finally',
+        userName: 'Finally去水印',
         background: '../../static/bg.svg',
         userImg: '../../static/user.jpg',
         rightIcon: '../../static/chevron-right.svg',

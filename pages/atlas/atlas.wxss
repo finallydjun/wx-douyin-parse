@@ -24,6 +24,9 @@
     width: 50rpx;
     box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
 }
+.btnBox{
+    margin-top: 40rpx;
+}
 
 .imgBox {
     padding: 40rpx;
