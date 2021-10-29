@@ -206,6 +206,9 @@ Page({
         })
     },
     downLoadImgList: function () {
+        wx.showLoading({
+            title: '下载中。。。'
+        })
         this.downloadFile(this.data.imgList).then(res => {
             this.setData({
                 list_show: false,
@@ -213,6 +216,8 @@ Page({
             wx.showToast({
                 title: '下载完成'
             })
+        }).catch((err)=>{
+            console.log(err)
         })
     },
     downloadFile(urls) {
@@ -232,9 +237,9 @@ Page({
         })
         return promise
     },
-    downloads: function (url) {
+    downloads:  function (url) {
         let that = this
-        return new Promise((resolve, reject) => {
+        return  new Promise((resolve, reject) => {
             console.log(url)
             wx.downloadFile({
                 url: url,
@@ -258,12 +263,6 @@ Page({
                 }
             })
         })
-    },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
     },
 
     /**

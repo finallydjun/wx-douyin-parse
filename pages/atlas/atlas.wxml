@@ -7,6 +7,6 @@
 <view class="btnBox">
     <button bindtap="downLoadImgList" wx:if="{{isparsing}}">一键下载所有图集</button>
 </view>
-<view class="imgBox">
-    <image data-src="{{item}}" bindtap="previewImage"  wx:for="{{imgList}}" wx:key="index" model:src="{{item}}" alt="" />
-</view>
+<scroll-view scroll-y="true"  class="imgBox">
+    <image data-src="{{item}}" lazy-load="true" mode="aspectFill" bindtap="previewImage"  wx:for="{{imgList}}" wx:key="index" model:src="{{item}}" alt="" />
+</scroll-view>
