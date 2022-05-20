@@ -4,17 +4,17 @@
         <view class="name">Name:</view>
         <view class="desc">Finally</view>
     </view>
-    <view class="content">
+    <!-- <view class="content">
         <view class="name">QQ:</view>
         <view class="desc">3170495286</view>
-    </view>
-    <view class="content">
+    </view> -->
+    <!-- <view class="content">
         <view class="name">QQ群:</view>
         <view class="desc">858380577</view>
-    </view>
+    </view> -->
     <view class="content">
         <view class="name">Email:</view>
-        <view class="desc">3170495286@qq.com</view>
+        <view class="desc">liudongjun@ldjun.com</view>
     </view>
     <view class="content">
         <view class="name">公众号:</view>
@@ -22,13 +22,13 @@
     </view>
     <view class="content">
         <view class="name">个人博客:</view>
-        <view class="desc">https://ldjun.cn</view>
+        <view class="desc">https://blog.ldjun.cn</view>
     </view>
 </view>
 <view class="itemBox">
     <text class="title">关于本小程序</text>
     <view class="item">该小程序正处于开发阶段！</view>
-    <view class="item">目前没有接入任何广告！</view>
+    <!-- <view class="item">目前没有接入任何广告！</view> -->
 </view>
 <view class="itemBox">
     <text class="title">我他喵要吐槽</text>
