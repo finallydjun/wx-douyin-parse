@@ -1,12 +1,25 @@
-<!-- 输入框部分 -->
-<view class="functionBox">
-    <input type="text" model:value="{{inputUrl}}" placeholder="请输入要解析的地址" />
-    <text class="btn" bindtap="parsing">解析</text>
-    <text class="btn" bindtap="clearInput">清空</text>
+<!-- 输入框区域 -->
+<view class="searchBox">
+    <input class="input" model:value="{{inputVal}}"  type="text" placeholder="输入创作者口令" />
+    <text class="searchBtn"  bindtap="onSerach">搜索</text>
 </view>
-<view class="btnBox">
-    <button bindtap="downLoadImgList" wx:if="{{isparsing}}">一键下载所有图集</button>
-</view>
-<scroll-view scroll-y="true"  class="imgBox">
-    <image data-src="{{item}}" lazy-load="true" mode="aspectFill" bindtap="previewImage"  wx:for="{{imgList}}" wx:key="index" model:src="{{item}}" alt="" />
+
+<!-- 用户列表区域 -->
+<scroll-view class="prevContent" wx:for="{{imgList}}" wx:key="index">
+    <view class="itemBoxTop" bindtap="navigateTo" wx:if="item.covers.length">
+        <image class="userImg" mode="aspectFill" model:src="{{item.avatar}}"></image>
+        <view class="userInfo">
+            <text>{{item.cipher}}</text>
+            <view>
+                👍{{item.favoriteCount}}
+                ❤️{{item.likeCount}}
+                😗{{item.wallpaperCount}}
+            </view>
+        </view>
+    </view>
+    <view class="itemBoxBom">
+        <view class="content" wx:for="{{item.covers}}" wx:for-item="pic" wx:key="index">
+            <image data-src="{{pic}}" data-demo="{{item.covers}}" lazy-load="true" mode="aspectFill" bindtap="previewImage" model:src="{{pic}}"></image>
+        </view>
+    </view>
 </scroll-view>

@@ -1,48 +1,75 @@
-page{
-    overflow-y: hidden;
+page {
+    overflow-x: hidden;
 }
-.functionBox {
-    margin: 10rpx;
-    padding: 10rpx 20rpx;
-    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
-    background: #fff;
+
+.searchBox {
+    padding-left: 20rpx;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
     display: flex;
     align-items: center;
+    border: 2px solid #81C995;
+    background: #fff;
+    border-radius: 30rpx;
+    font-size: 30rpx;
 }
 
-.functionBox input {
-    width: 700rpx;
+.searchBox .input {
+    flex: 1;
+    height: 90rpx;
+    border-radius: 30rpx;
 }
 
-.functionBox .btn {
-    padding: 5px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 10rpx;
-    text-align: center;
-    white-space: nowrap;
-    display: inline-block;
+.searchBox .searchBtn {
     background: #81C995;
+    border-radius: 25rpx;
+    padding: 10rpx;
+    margin-right: 15rpx;
+    width: 100rpx;
+    white-space: nowrap;
     color: #fff;
-    width: 50rpx;
-    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 10%);
-}
-.btnBox{
-    margin-top: 40rpx;
-    margin-bottom: 40rpx;
-}
-
-.imgBox {
-    padding: 5rpx 0;
-    height: 1000rpx;
     text-align: center;
 }
 
-image {
-    width: 710rpx;
-    box-shadow: 0 2rpx 12rpx 0 rgb(0 0 0 / 40%);
-    margin-bottom: 30rpx;
+.prevContent {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30rpx;
+}
+
+.itemBoxTop {
+    display: flex;
+}
+
+.itemBoxTop .userImg {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-left: 25rpx;
+    margin-bottom: 15rpx;
+}
+
+.userInfo{
+    margin-left: 20rpx;
+}
+
+.itemBoxBom {
+    width: 750rpx;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 25rpx;
+}
+
+.itemBoxBom .content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 32%;
+}
+
+.itemBoxBom image {
     border-radius: 10rpx;
-    /* flex-wrap: wrap;
-    margin-bottom: 20rpx; */
+    height: 500rpx;
+    margin-right: 10px;
 }

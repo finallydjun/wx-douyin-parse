@@ -1,40 +1,42 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/atlas/atlas",
-    "pages/user/version/version",
-    "pages/user/user",
-    "pages/user/myPage/myPage",
-    "pages/user/explain/explain"
-  ],
-  "window":{
-    "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#81C995",
-    "navigationBarTitleText": "主页",
-    "navigationBarTextStyle":"white"
-  },
-  "tabBar": {
-    "list": [
-      {
-        "iconPath": "/static/home-icon.png",
-        "pagePath": "pages/index/index",
-        "selectedIconPath": "/static/home-icon-active.png",
-        "text": "主页"
-      },
-      {
-        "iconPath": "/static/skyatlas.png",
-        "pagePath": "pages/atlas/atlas",
-        "selectedIconPath": "/static/skyatlas-active.png",
-        "text": "图集"
-      },
-      {
-        "iconPath": "/static/user-icon.png",
-        "pagePath": "pages/user/user",
-        "selectedIconPath": "/static/user-icon-active.png",
-        "text": "关于"
-      }
-    ]
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/atlas/atlas",
+        "pages/atlas/userPic/userPic",
+        "pages/index/index",
+        "pages/user/version/version",
+        "pages/user/user",
+        "pages/user/myPage/myPage",
+        "pages/user/explain/explain",
+        "pages/atlas/userPic"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#81C995",
+        "navigationBarTitleText": "主页",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "iconPath": "/static/home-icon.png",
+                "pagePath": "pages/index/index",
+                "selectedIconPath": "/static/home-icon-active.png",
+                "text": "主页"
+            },
+            {
+                "iconPath": "/static/skyatlas.png",
+                "pagePath": "pages/atlas/atlas",
+                "selectedIconPath": "/static/skyatlas-active.png",
+                "text": "图集"
+            },
+            {
+                "iconPath": "/static/user-icon.png",
+                "pagePath": "pages/user/user",
+                "selectedIconPath": "/static/user-icon-active.png",
+                "text": "关于"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
 }

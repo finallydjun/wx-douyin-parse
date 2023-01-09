@@ -1,10 +1,9 @@
 // pages/atlas/atlas.js
 Page({
     onLoad() {
-
+        this.getUserItems()
     },
     onShow() {
-        console.log(111)
         // this.getIsCopy()
     },
     onHide() {
@@ -14,59 +13,113 @@ Page({
      * 页面的初始数据
      */
     data: {
-        inputUrl: '',
+        inputVal: undefined,
         isparsing: false,
         list_show: false,
         imgList: [],
+        serachList: [],
     },
-    // getIsCopy() {
-    //     let that = this;
-    //     wx.getClipboardData({
-    //         success: (option) => {
-    //             console.log(option)
-    //             // const isUrl = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+#/%]*[/]*/.exec(option.data)
-    //             const isUrl = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g.exec(option.data)
-    //             // http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))
-    //             console.log(isUrl)
-    //             if (isUrl) {
-    //                 wx.showModal({
-    //                     title: '检测到剪切板有复制链接！',
-    //                     content: '是否解析当前链接：' + isUrl[0],
-    //                     success(res) {
-    //                         if (res.confirm) {
-    //                             that.setData({
-    //                                 inputUrl: isUrl[0]
-    //                             })
-    //                             that.parsing()
-    //                             // wx.setClipboardData({
-    //                             //     data: ' ',
-    //                             //     success(res) {
-    //                             //         wx.hideLoading()
-    //                             //         console.log(res)
-    //                             //     },
-    //                             //     fail(e) {
-    //                             //         console.log(e)
-    //                             //     }
-    //                             // })
-    //                         } else if (res.cancel) {
-    //                             console.log('用户点击取消')
-    //                             wx.setClipboardData({
-    //                                 data: ' ',
-    //                                 success(res) {
-    //                                     wx.hideLoading()
-    //                                     console.log(res)
-    //                                 },
-    //                                 fail(e) {
-    //                                     console.log(e)
-    //                                 }
-    //                             })
-    //                         }
-    //                     }
-    //                 })
-    //             }
-    //         },
-    //     })
-    // },
+    getIsCopy() {
+        let that = this;
+        wx.getClipboardData({
+            success: (option) => {
+                console.log(option)
+                // const isUrl = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+#/%]*[/]*/.exec(option.data)
+                const isUrl = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g.exec(option.data)
+                // http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))
+                console.log(isUrl)
+                if (isUrl) {
+                    wx.showModal({
+                        title: '检测到剪切板有复制链接！',
+                        content: '是否解析当前链接：' + isUrl[0],
+                        success(res) {
+                            if (res.confirm) {
+                                that.setData({
+                                    inputUrl: isUrl[0]
+                                })
+                                that.parsing()
+                                // wx.setClipboardData({
+                                //     data: ' ',
+                                //     success(res) {
+                                //         wx.hideLoading()
+                                //         console.log(res)
+                                //     },
+                                //     fail(e) {
+                                //         console.log(e)
+                                //     }
+                                // })
+                            } else if (res.cancel) {
+                                console.log('用户点击取消')
+                                wx.setClipboardData({
+                                    data: ' ',
+                                    success(res) {
+                                        wx.hideLoading()
+                                        console.log(res)
+                                    },
+                                    fail(e) {
+                                        console.log(e)
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            },
+        })
+    },
+    onSerach() {
+        if (!!this.inputVal) {
+            // TODO 搜索逻辑
+        } else {
+            // 随机筛选逻辑
+            this.getUserItems()
+        }
+    },
+    // 页面跳转
+    navigateTo(e) {
+        wx.navigateTo({
+            url: '/pages/atlas/userPic/userPic'
+        })
+    },
+    getUserItems() {
+        this.postAction('/producer/listByRand', {
+            "pageNum": (Math.random() * 422).toFixed(0),
+            "pageSize": 10,
+            "channel": "DY",
+            "process": "image/resize,400",
+        }).then(res => {
+            console.log(res)
+            try {
+                this.setData({
+                    imgList: res.data.result,
+                })
+            } catch {
+                this.getUserItems()
+            }
+        })
+    },
+    postAction(url, params) {
+        let baseUrl = 'https://api.ms4ms.cn'
+        return new Promise((resolve, reject) => {
+            wx.request({
+                url: baseUrl + url,
+                method: "POST",
+                header: {
+                    'content-type': 'application/json', // 默认值
+                    'Host': 'api.ms4ms.cn',
+                    'sign': '3c9b4d59590ddc71bad925c65540d9f214810d71',
+                    'noncestr': '3181ddbaf4f948eac26a7859bb358bb2'
+                },
+                data: params,
+                success(res) {
+                    resolve(res.data)
+                },
+                fail(err) {
+                    reject(err)
+                }
+            })
+        })
+    },
 
     parsing() {
         if (this.data.inputUrl == '') {
@@ -198,11 +251,12 @@ Page({
         })
     },
     previewImage: function (e) {
-        console.log(e)
+        let that = this
+        console.log(e.target.dataset)
         var current = e.target.dataset.src;
         wx.previewImage({
             current: current, // 当前显示图片的http链接
-            urls: this.data.imgList // 需要预览的图片http链接列表
+            urls: e.target.dataset.demo
         })
     },
     downLoadImgList: function () {
@@ -216,7 +270,7 @@ Page({
             wx.showToast({
                 title: '下载完成'
             })
-        }).catch((err)=>{
+        }).catch((err) => {
             console.log(err)
         })
     },
@@ -237,9 +291,9 @@ Page({
         })
         return promise
     },
-    downloads:  function (url) {
+    downloads: function (url) {
         let that = this
-        return  new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             console.log(url)
             wx.downloadFile({
                 url: url,

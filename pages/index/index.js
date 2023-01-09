@@ -1,7 +1,7 @@
 // pages/index/index.js
 Page({
     onLoad() {
-        this.getOneText();
+        // this.getOneText();
     },
     onShow() {
         // this.getIsCopy()
@@ -14,7 +14,7 @@ Page({
      */
     data: {
         isparsing:false,//是否解析成功
-        background: ['https://tenapi.cn/acg', 'https://tenapi.cn/acg', 'https://tenapi.cn/acg'],
+        background: ['https://tenapi.cn/v2/acg', 'https://tenapi.cn/v2/acg', 'https://tenapi.cn/v2/acg'],
         indicatorDots: true,
         vertical: false,
         autoplay: false,
@@ -37,60 +37,61 @@ Page({
             },
         ]
     },
-    // getIsCopy() {
-    //     let that = this;
-    //     wx.getClipboardData({
-    //         success: (option) => {
-    //             console.log(option)
-    //             // const isUrl = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+#/%]*[/]*/.exec(option.data)
-    //             const isUrl = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g.exec(option.data)
-    //             // http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))
-    //             console.log(isUrl)
-    //             if (isUrl) {
-    //                 wx.showModal({
-    //                     title: '检测到剪切板有复制链接！',
-    //                     content: '是否解析当前链接：' + isUrl[0],
-    //                     success(res) {
-    //                         if (res.confirm) {
-    //                             that.setData({
-    //                                 inputUrl: isUrl[0]
-    //                             })
-    //                             that.parsing()
-    //                             // wx.setClipboardData({
-    //                             //     data: ' ',
-    //                             //     success(res) {
-    //                             //         wx.hideLoading()
-    //                             //         console.log(res)
-    //                             //     },
-    //                             //     fail(e) {
-    //                             //         console.log(e)
-    //                             //     }
-    //                             // })
-    //                         } else if (res.cancel) {
-    //                             console.log('用户点击取消')
-    //                             wx.setClipboardData({
-    //                                 data: ' ',
-    //                                 success(res) {
-    //                                     wx.hideLoading()
-    //                                     console.log(res)
-    //                                 },
-    //                                 fail(e) {
-    //                                     console.log(e)
-    //                                 }
-    //                             })
-    //                         }
-    //                     }
-    //                 })
-    //             }
-    //         },
-    //     })
-    // },
+    getIsCopy() {
+        let that = this;
+        wx.getClipboardData({
+            success: (option) => {
+                console.log(option)
+                // const isUrl = /http[s]?:\/\/[\w.]+[\w/]*[\w.]*\??[\w=&:\-+#/%]*[/]*/.exec(option.data)
+                const isUrl = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g.exec(option.data)
+                // http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))
+                console.log(isUrl)
+                if (isUrl) {
+                    wx.showModal({
+                        title: '检测到剪切板有复制链接！',
+                        content: '是否解析当前链接：' + isUrl[0],
+                        success(res) {
+                            if (res.confirm) {
+                                that.setData({
+                                    inputUrl: isUrl[0]
+                                })
+                                that.parsing()
+                                // wx.setClipboardData({
+                                //     data: ' ',
+                                //     success(res) {
+                                //         wx.hideLoading()
+                                //         console.log(res)
+                                //     },
+                                //     fail(e) {
+                                //         console.log(e)
+                                //     }
+                                // })
+                            } else if (res.cancel) {
+                                console.log('用户点击取消')
+                                wx.setClipboardData({
+                                    data: ' ',
+                                    success(res) {
+                                        wx.hideLoading()
+                                        console.log(res)
+                                    },
+                                    fail(e) {
+                                        console.log(e)
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+            },
+        })
+    },
     // 获取一言数据
     getOneText() {
         // 一言
         let that = this;
         wx.request({
-            url: 'https://tenapi.cn/yiyan/?format=text', //仅为示例，并非真实的接口地址
+            url: 'https://tenapi.cn/v2/yiyan', //仅为示例，并非真实的接口地址
+            method: "POST",
             header: {
                 'content-type': 'application/json' // 默认值
             },

@@ -14,6 +14,37 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+/**
+ * map转对象形式
+ * @param {*} map 
+ * @param {*} list 
+ */
+const typeforMap = (map, list) => {
+  let list = []
+  list.forEach((item, index) => {
+    list.push({
+      name: map[item],
+      value: item,
+      key: index + Date.now()
+    })
+  })
+  return list
+}
+/**
+ * @returns statusBarHeight
+ */
+function GetStatusBarHeight() {
+  let statusBarHeight = 0;
+  wx.getSystemInfo({
+    success: function (res) {
+      statusBarHeight = res.statusBarHeight;
+    },
+  });
+  return statusBarHeight
+}
+
 module.exports = {
-  formatTime
+  formatTime,
+  GetStatusBarHeight,
+  typeforMap
 }

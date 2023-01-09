@@ -10,9 +10,9 @@
         </swiper>
     </view>
     <!-- 一言部分 -->
-    <scroll-view class="scrollBox" scroll-x="true">
+    <!-- <scroll-view class="scrollBox" scroll-x="true">
         <text user-select="true" style="white-space: nowrap;">{{oneText}}</text>
-    </scroll-view>
+    </scroll-view> -->
     <!-- 输入框部分 -->
     <view class="functionBox">
         <input type="text" model:value="{{inputUrl}}" placeholder="请输入要解析的地址" />

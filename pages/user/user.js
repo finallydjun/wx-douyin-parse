@@ -1,6 +1,5 @@
 // pages/user/user.js
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -22,8 +21,6 @@ Page({
                 type: 'feedback',
                 tag: 3
             },
-
-
             {
                 iconPath: '../../static/send.svg',
                 name: '版本说明',

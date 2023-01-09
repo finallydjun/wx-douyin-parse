@@ -7,6 +7,14 @@ Page({
     data: {
         updataList:[
             {
+                dateTime:'2023-01-09',
+                version:'1.0.6',
+                contentList:[
+                    'bug修复',
+                    '图集整体逻辑修改',
+                ]
+            },
+            {
                 dateTime:'2021-10-29',
                 version:'1.0.5',
                 contentList:[
